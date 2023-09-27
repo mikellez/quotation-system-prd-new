@@ -1,0 +1,10 @@
+/vendor
+/quotation-system
+quotation-system-workspace.code-workspace
+/api/runtime
+/frontend/runtime
+/frontend/web/assets
+/backend/runtime
+/backend/web/assets
+/backend/web/storage
+/backend/web/img

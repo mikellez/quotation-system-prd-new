@@ -1,0 +1,1133 @@
+2021-06-21 12:39:21 [172.18.0.1][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class api\modules\v1\Module does not exist in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:508
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(508): ReflectionClass->__construct('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#8 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "api\modules\v1\Module". in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:510
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#9 {main}
+2021-06-21 12:39:21 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => 'cfa33611-5ba3-4daf-ad2f-efe9264acca9'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57428'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/web/index.php'
+    'REQUEST_URI' => '/quotation-system/api/web/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/web/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279161.0333
+    'REQUEST_TIME' => 1624279161
+]
+2021-06-21 12:41:54 [172.18.0.1][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class api\modules\v1\Module does not exist in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:508
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(508): ReflectionClass->__construct('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#8 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "api\modules\v1\Module". in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:510
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#9 {main}
+2021-06-21 12:41:53 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => '717b6a13-95dd-4d6b-ab4a-bbdf822d13fe'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57442'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/web/index.php'
+    'REQUEST_URI' => '/quotation-system/api/web/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/web/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279313.9268
+    'REQUEST_TIME' => 1624279313
+]
+2021-06-21 12:42:41 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-06-21 12:42:41 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => '3be8acf4-ba0b-45d9-86e7-510325cae4e7'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57442'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/web/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/web/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279360.9811
+    'REQUEST_TIME' => 1624279360
+]
+2021-06-21 12:47:09 [172.18.0.1][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class api\modules\v1\Module does not exist in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:508
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(508): ReflectionClass->__construct('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#8 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "api\modules\v1\Module". in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:510
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#9 {main}
+2021-06-21 12:47:09 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => 'ee290b0d-c9fd-4012-a413-cb739b12c81d'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57472'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279628.9974
+    'REQUEST_TIME' => 1624279628
+]
+2021-06-21 12:49:09 [172.18.0.1][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class api\modules\v1\Module does not exist in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:508
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(508): ReflectionClass->__construct('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#8 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "api\modules\v1\Module". in /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php:510
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(386): yii\di\Container->getDependencies('api\\modules\\v1\\...')
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('api\\modules\\v1\\...', Array, Array)
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('api\\modules\\v1\\...', Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(592): yii\base\Module->getModule('v1')
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Module->createController('client/index')
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#9 {main}
+2021-06-21 12:49:09 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => '649e1322-2899-4e41-a569-d029d87398ff'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57482'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279749.1747
+    'REQUEST_TIME' => 1624279749
+]
+2021-06-21 12:52:11 [172.18.0.1][-][-][error][Error] Error: Class 'api\modules\v1\models\Client' not found in /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php:130
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php(98): yii\rest\IndexAction->prepareDataProvider()
+#1 [internal function]: yii\rest\IndexAction->run()
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\Action->runWithParams(Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('index', Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#8 {main}
+2021-06-21 12:52:11 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => 'dd1ec9c9-7a06-4635-853f-2c4ef3cee59e'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57494'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624279931.7975
+    'REQUEST_TIME' => 1624279931
+]
+2021-06-21 12:55:31 [172.18.0.1][-][-][error][Error] Error: Class 'api\modules\v1\models\Client' not found in /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php:130
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php(98): yii\rest\IndexAction->prepareDataProvider()
+#1 [internal function]: yii\rest\IndexAction->run()
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\Action->runWithParams(Array)
+#4 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('index', Array)
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#8 {main}
+2021-06-21 12:55:30 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => 'eb1d42c0-6099-4ff6-be06-8b0d30b63955'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57504'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624280130.879
+    'REQUEST_TIME' => 1624280130
+]
+2021-06-21 12:55:51 [172.18.0.1][-][-][error][Error] Error: Class 'api\modules\v1\models\common\models\Client' not found in /var/www/html/quotation-system/api/modules/v1/models/Client.php:4
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/BaseYii.php(293): include()
+#1 [internal function]: yii\BaseYii::autoload('api\\modules\\v1\\...')
+#2 /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php(130): spl_autoload_call('api\\modules\\v1\\...')
+#3 /var/www/html/quotation-system/vendor/yiisoft/yii2/rest/IndexAction.php(98): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#6 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\Action->runWithParams(Array)
+#7 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('index', Array)
+#8 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('v1/client/index', Array)
+#9 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#11 {main}
+2021-06-21 12:55:51 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => 'e3462e6b-1401-4017-9aa6-51857656a3ba'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57504'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624280151.0856
+    'REQUEST_TIME' => 1624280151
+]
+2021-06-21 12:59:45 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-06-21 12:59:45 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => '3dfc4df0-83cd-4ac8-aba2-3ddf400afce2'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57520'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/client/id'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624280385.6121
+    'REQUEST_TIME' => 1624280385
+]
+2021-06-21 12:59:50 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-06-21 12:59:50 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_POSTMAN_TOKEN' => '4fc268c9-6393-42d3-86cd-16804fd9eb77'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57520'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/client/1'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624280390.3898
+    'REQUEST_TIME' => 1624280390
+]
+2021-06-21 13:05:29 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-06-21 13:05:29 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'en'
+    '_identity' => 'db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea:2:{i:0;s:9:\"_identity\";i:1;s:47:\"[53,\"QCZER82RCn9JHsYkXMaWudwECH_R76Bu\",2592000]\";}'
+    '_identity-backend' => '1f45d6913cddda4d2b91853ffb038fb170a8bd9fa0acd986ca85a25e804a1a5da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"6BQFzxJebSBdfmD6VRUqoZOOSXUE_i4F\",2592000]\";}'
+    'pmaUser-1' => '{\"iv\":\"SMW5aphUbVyAa\\/Qkd\\/n0aA==\",\"mac\":\"7ff652ab40e2d1ab6901a8d3b729413a2b0bf3f6\",\"payload\":\"4GrRufmzSnu1scyKA0EKGQ==\"}'
+    'advanced-backend' => 'u3b3l8tfkc8pkhb749qmng7q7o'
+    '_csrf-backend' => 'f066da89a23876d5f57d44ef136fbd8025305803a05ba155cef788d3988125e5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gAn11vWOqhhZs45XZ1ZG5Bj0ojBJ8EdC\";}'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => 'pma_lang=en; _identity=db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A47%3A%22%5B53%2C%22QCZER82RCn9JHsYkXMaWudwECH_R76Bu%22%2C2592000%5D%22%3B%7D; _identity-backend=1f45d6913cddda4d2b91853ffb038fb170a8bd9fa0acd986ca85a25e804a1a5da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%226BQFzxJebSBdfmD6VRUqoZOOSXUE_i4F%22%2C2592000%5D%22%3B%7D; pmaUser-1=%7B%22iv%22%3A%22SMW5aphUbVyAa%5C%2FQkd%5C%2Fn0aA%3D%3D%22%2C%22mac%22%3A%227ff652ab40e2d1ab6901a8d3b729413a2b0bf3f6%22%2C%22payload%22%3A%224GrRufmzSnu1scyKA0EKGQ%3D%3D%22%7D; advanced-backend=u3b3l8tfkc8pkhb749qmng7q7o; _csrf-backend=f066da89a23876d5f57d44ef136fbd8025305803a05ba155cef788d3988125e5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gAn11vWOqhhZs45XZ1ZG5Bj0ojBJ8EdC%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/quotation-system/backend/web/quotation/create'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_X_CSRF_TOKEN' => 'Gj5bEoGMUQkhj_lHurB58vOCeZqjzDat9gY7EcewT2t9fzUjsPoGRlDnkR3JhEyqqbMj3ZaOXJ2ZbHlb__UrKA=='
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57610'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients/'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624280729.6094
+    'REQUEST_TIME' => 1624280729
+]
+2021-06-21 13:10:02 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-06-21 13:10:02 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'en'
+    '_identity' => 'db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea:2:{i:0;s:9:\"_identity\";i:1;s:47:\"[53,\"QCZER82RCn9JHsYkXMaWudwECH_R76Bu\",2592000]\";}'
+    '_identity-backend' => '1f45d6913cddda4d2b91853ffb038fb170a8bd9fa0acd986ca85a25e804a1a5da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"6BQFzxJebSBdfmD6VRUqoZOOSXUE_i4F\",2592000]\";}'
+    'pmaUser-1' => '{\"iv\":\"SMW5aphUbVyAa\\/Qkd\\/n0aA==\",\"mac\":\"7ff652ab40e2d1ab6901a8d3b729413a2b0bf3f6\",\"payload\":\"4GrRufmzSnu1scyKA0EKGQ==\"}'
+    'advanced-backend' => 'u3b3l8tfkc8pkhb749qmng7q7o'
+    '_csrf-backend' => 'f066da89a23876d5f57d44ef136fbd8025305803a05ba155cef788d3988125e5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gAn11vWOqhhZs45XZ1ZG5Bj0ojBJ8EdC\";}'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => 'pma_lang=en; _identity=db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A47%3A%22%5B53%2C%22QCZER82RCn9JHsYkXMaWudwECH_R76Bu%22%2C2592000%5D%22%3B%7D; _identity-backend=1f45d6913cddda4d2b91853ffb038fb170a8bd9fa0acd986ca85a25e804a1a5da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%226BQFzxJebSBdfmD6VRUqoZOOSXUE_i4F%22%2C2592000%5D%22%3B%7D; pmaUser-1=%7B%22iv%22%3A%22SMW5aphUbVyAa%5C%2FQkd%5C%2Fn0aA%3D%3D%22%2C%22mac%22%3A%227ff652ab40e2d1ab6901a8d3b729413a2b0bf3f6%22%2C%22payload%22%3A%224GrRufmzSnu1scyKA0EKGQ%3D%3D%22%7D; advanced-backend=u3b3l8tfkc8pkhb749qmng7q7o; _csrf-backend=f066da89a23876d5f57d44ef136fbd8025305803a05ba155cef788d3988125e5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gAn11vWOqhhZs45XZ1ZG5Bj0ojBJ8EdC%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/quotation-system/backend/web/quotation/create'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_X_CSRF_TOKEN' => 'SV8OcJGEvN8073WkGQhK8oc9zLp3GQ-aH3J73kQcCXguHmBBoPLrkEWHHf5qPH-q3QyW_UJbZapwGDmUfFltOw=='
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '57638'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/v1/clients/'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1624281002.1994
+    'REQUEST_TIME' => 1624281002
+]
+2021-07-04 09:22:59 [172.18.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Request.php:293
+Stack trace:
+#0 /var/www/html/quotation-system/vendor/yiisoft/yii2/web/Application.php(83): yii\web\Request->resolve()
+#1 /var/www/html/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-07-04 09:22:59 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'en'
+    '_identity' => 'db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea:2:{i:0;s:9:\"_identity\";i:1;s:47:\"[53,\"QCZER82RCn9JHsYkXMaWudwECH_R76Bu\",2592000]\";}'
+    '_csrf-backend' => 'd280019cecb9cd128eb1aca1dc39762614f01ddaf6dbdedd2167f9e1ed49e86fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Fsy9C1hdsDkMJvxRLNHWPSQruNLhUQQ3\";}'
+    'phpMyAdmin' => '0a40f338d45d1e4bdbb77d48bfd5c90e'
+    'advanced-backend' => 'v34s6ltghaodj7c2if55o4qac8'
+    'advanced-frontend' => 'gcv7uh1t8jrgkb23id47e1eudn'
+    '_csrf-frontend' => '7ceec4a0f274f4465881e1c98f4153951793b909b88d15bdb3fa10ff7a33bdeba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"Otfji9SCKIcM0JSxHVO8LD85UaURaLBu\";}'
+    'pmaUser-1' => '{\"iv\":\"objQAnzupl8+Nb4J\\/7Ii\\/g==\",\"mac\":\"d8e6d18217d865788f81d8a7a93ccf2742313ab1\",\"payload\":\"gT+yLbr\\/t\\/8KxnFEORXbow==\"}'
+    'pmaAuth-1' => '{\"iv\":\"3M7m65d3IIVu4W2N7jIbUw==\",\"mac\":\"1d29a4e857736bc88fead2544bbd794245958bff\",\"payload\":\"OqUlZ5vQO1oS4t\\/Nq6Kt9ih0u9D4iOUcBTtOesqrfoQ=\"}'
+]
+
+$_SERVER = [
+    'PHP_EXTRA_CONFIGURE_ARGS' => '--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi'
+    'HOSTNAME' => '78c2385b8a0c'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'HOME' => '/var/www'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_MD5' => ''
+    'PHP_VERSION' => '7.4.7'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz.asc'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.7.tar.xz'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'PWD' => '/var/www/html'
+    'PHP_SHA256' => '53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => 'pma_lang=en; _identity=db65bbe4c59555f9bdba044ee6f541a2ff283d2a180805ac3eae53940a59448ea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A47%3A%22%5B53%2C%22QCZER82RCn9JHsYkXMaWudwECH_R76Bu%22%2C2592000%5D%22%3B%7D; _csrf-backend=d280019cecb9cd128eb1aca1dc39762614f01ddaf6dbdedd2167f9e1ed49e86fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Fsy9C1hdsDkMJvxRLNHWPSQruNLhUQQ3%22%3B%7D; phpMyAdmin=0a40f338d45d1e4bdbb77d48bfd5c90e; advanced-backend=v34s6ltghaodj7c2if55o4qac8; advanced-frontend=gcv7uh1t8jrgkb23id47e1eudn; _csrf-frontend=7ceec4a0f274f4465881e1c98f4153951793b909b88d15bdb3fa10ff7a33bdeba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Otfji9SCKIcM0JSxHVO8LD85UaURaLBu%22%3B%7D; pmaUser-1=%7B%22iv%22%3A%22objQAnzupl8%2BNb4J%5C%2F7Ii%5C%2Fg%3D%3D%22%2C%22mac%22%3A%22d8e6d18217d865788f81d8a7a93ccf2742313ab1%22%2C%22payload%22%3A%22gT%2ByLbr%5C%2Ft%5C%2F8KxnFEORXbow%3D%3D%22%7D; pmaAuth-1=%7B%22iv%22%3A%223M7m65d3IIVu4W2N7jIbUw%3D%3D%22%2C%22mac%22%3A%221d29a4e857736bc88fead2544bbd794245958bff%22%2C%22payload%22%3A%22OqUlZ5vQO1oS4t%5C%2FNq6Kt9ih0u9D4iOUcBTtOesqrfoQ%3D%22%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => ''
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.5'
+    'REMOTE_PORT' => '60024'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.17.10'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/quotation-system/api/index.php'
+    'REQUEST_URI' => '/quotation-system/api/web/'
+    'SCRIPT_NAME' => '/quotation-system/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/quotation-system/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1625390579.4732
+    'REQUEST_TIME' => 1625390579
+]
+2021-07-27 14:05:46 [192.168.208.1][-][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /var/www/quotation-system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 124. in /var/www/quotation-system/vendor/yiisoft/yii2/web/Response.php:373
+Stack trace:
+#0 /var/www/quotation-system/vendor/yiisoft/yii2/web/Response.php(346): yii\web\Response->sendHeaders()
+#1 /var/www/quotation-system/vendor/yiisoft/yii2/base/Application.php(398): yii\web\Response->send()
+#2 /var/www/quotation-system/api/index.php(17): yii\base\Application->run()
+#3 {main}
+2021-07-27 14:05:46 [192.168.208.1][-][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '1l3h9o8f5t7sb7af4tns56ohmu'
+    '_csrf-frontend' => 'c264e3c2f0833cc71e3d1aad91883a3558c0b8db55b4e11a41fc22b952137a2da:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5dFEBWB2sE7EeVQoDJapydmYL7j7CwNN\";}'
+    '_identity-backend' => '1aa19c39be44763e95a166adc8a6df0a9f2505cc1007bd0c44a5cf5edba11333a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"QCZER82RCn9JHsYkXMaWudwECH_R76Bu\",2592000]\";}'
+    '_csrf-backend' => '27ca5b313685d2ba648e707f46d54d49e1baa3ad2a3ac2b363f251a30b6451aaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"1OZ9qwRehrg6EIM_hYslU2Ekf3-a2lbC\";}'
+    'advanced-backend' => 'b92fjhfktruulko5qgm8ik3qen'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'advanced-frontend=1l3h9o8f5t7sb7af4tns56ohmu; _csrf-frontend=c264e3c2f0833cc71e3d1aad91883a3558c0b8db55b4e11a41fc22b952137a2da%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225dFEBWB2sE7EeVQoDJapydmYL7j7CwNN%22%3B%7D; _identity-backend=1aa19c39be44763e95a166adc8a6df0a9f2505cc1007bd0c44a5cf5edba11333a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22QCZER82RCn9JHsYkXMaWudwECH_R76Bu%22%2C2592000%5D%22%3B%7D; _csrf-backend=27ca5b313685d2ba648e707f46d54d49e1baa3ad2a3ac2b363f251a30b6451aaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%221OZ9qwRehrg6EIM_hYslU2Ekf3-a2lbC%22%3B%7D; advanced-backend=b92fjhfktruulko5qgm8ik3qen'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://quotation-system.local/backend/quotation-group/create'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36'
+    'HTTP_X_CSRF_TOKEN' => 'IQRlHiuTlib15T8C8ciB8sXr9AOAYey4rApiUG-JRjIQSz8nWuTEQ52XWDS0gcytrbKHb9VTqdPKOU8xXeUkcQ=='
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'quotation-system.local'
+    'SCRIPT_FILENAME' => '/var/www/quotation-system/api/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'quotation-system.local'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '192.168.208.3'
+    'REMOTE_PORT' => '56184'
+    'REMOTE_ADDR' => '192.168.208.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/quotation-system/api'
+    'DOCUMENT_URI' => '/api/index.php'
+    'REQUEST_URI' => '/api/v1/clients/1'
+    'SCRIPT_NAME' => '/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1627394746.1142
+    'REQUEST_TIME' => 1627394746
+]
+2021-10-07 00:48:22 [172.27.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Object not found: 1 in /var/www/quotation-system/vendor/yiisoft/yii2/rest/Action.php:104
+Stack trace:
+#0 /var/www/quotation-system/vendor/yiisoft/yii2/rest/ViewAction.php(29): yii\rest\Action->findModel()
+#1 [internal function]: yii\rest\ViewAction->run()
+#2 /var/www/quotation-system/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array()
+#3 /var/www/quotation-system/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\Action->runWithParams()
+#4 /var/www/quotation-system/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction()
+#5 /var/www/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction()
+#6 /var/www/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest()
+#7 /var/www/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2021-10-07 00:48:21 [172.27.0.1][-][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'quotation-system.local'
+    'HTTP_POSTMAN_TOKEN' => '2e57643c-9b7c-4220-92c6-7ee3c63a4bcd'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/quotation-system/api/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'quotation-system.local'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.27.0.3'
+    'REMOTE_PORT' => '55104'
+    'REMOTE_ADDR' => '172.27.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/quotation-system/api/web'
+    'DOCUMENT_URI' => '/api/index.php'
+    'REQUEST_URI' => '/api/v1/clients/1'
+    'SCRIPT_NAME' => '/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1633567701.863
+    'REQUEST_TIME' => 1633567701
+]
+2021-10-07 00:48:26 [172.27.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Object not found: 4 in /var/www/quotation-system/vendor/yiisoft/yii2/rest/Action.php:104
+Stack trace:
+#0 /var/www/quotation-system/vendor/yiisoft/yii2/rest/ViewAction.php(29): yii\rest\Action->findModel()
+#1 [internal function]: yii\rest\ViewAction->run()
+#2 /var/www/quotation-system/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array()
+#3 /var/www/quotation-system/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\Action->runWithParams()
+#4 /var/www/quotation-system/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction()
+#5 /var/www/quotation-system/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction()
+#6 /var/www/quotation-system/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest()
+#7 /var/www/quotation-system/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2021-10-07 00:48:26 [172.27.0.1][-][-][info][application] $_GET = [
+    'id' => '4'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_HOST' => 'quotation-system.local'
+    'HTTP_POSTMAN_TOKEN' => '9d2699b8-2a25-4098-8b60-c115ae29a9bd'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.26.2'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'SCRIPT_FILENAME' => '/var/www/quotation-system/api/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'quotation-system.local'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.27.0.3'
+    'REMOTE_PORT' => '55104'
+    'REMOTE_ADDR' => '172.27.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/quotation-system/api/web'
+    'DOCUMENT_URI' => '/api/index.php'
+    'REQUEST_URI' => '/api/v1/clients/4'
+    'SCRIPT_NAME' => '/api/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => 'application/json'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1633567706.5308
+    'REQUEST_TIME' => 1633567706
+]

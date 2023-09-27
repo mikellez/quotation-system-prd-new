@@ -1,0 +1,49 @@
+AddDefaultCharset UTF-8
+
+Options FollowSymLinks
+DirectoryIndex index.php index.html
+RewriteEngine on
+
+RewriteRule /\. - [L,F]
+
+# define the app environment variable
+RewriteCond %{REQUEST_URI} !^/((frontend|backend)/web|backend)
+RewriteRule ^ - [E=APP:frontend]
+RewriteCond %{REQUEST_URI} (?!^/backend/web)^/backend
+RewriteRule ^ - [E=APP:backend]
+
+# rewrite the URI of the frontend app
+#RewriteRule ^ frontend/web%{REQUEST_URI}
+RewriteCond %{ENV:APP} =frontend
+RewriteRule ^ backend/web%{REQUEST_URI}
+# if a directory or a file exists, use the request directly
+# otherwise forward the request to index.php
+#RewriteRule ^ frontend/web/index.php [L]
+RewriteCond %{ENV:APP} =frontend
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ backend/web/index.php [L]
+
+# redirect to the URL without a trailing slash (uncomment if necessary)
+#RewriteRule ^admin/$ /admin [L,R=301]
+
+# rewrite the URI of the backend app
+RewriteCond %{ENV:APP} =backend
+RewriteRule ^backend/?(.*)$ backend/web/$1
+# if a directory or a file exists, use the request directly
+# otherwise forward the request to index.php
+RewriteCond %{ENV:APP} =backend
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ backend/web/index.php [L]
+
+# handle a directory trailing slash, redirect to the initial URI instead the rewritten one
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [L,R=301]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

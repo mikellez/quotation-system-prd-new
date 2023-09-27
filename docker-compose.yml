@@ -1,0 +1,28 @@
+version: '3'
+services:
+    qsys_init_web:
+        build: ./docker
+        container_name: qsys_init_web
+        ports:
+            - "80:80"
+        volumes:
+            - ./../quotation-system:/var/www/quotation-system:delegated
+            - ./nginx/configs/dev:/etc/nginx/sites-enabled:delegated
+            - ./nginx/conf-stacks:/etc/nginx/conf-stacks:delegated
+            - ./docker/php/00-php.ini:/etc/php/7.4/fpm/conf.d/00-php.ini:delegated
+        working_dir: /var/www/quotation-system
+        links:
+            - qsys_init_db
+
+    qsys_init_db:
+        container_name: qsys_init_db
+        image: mysql
+        restart: always
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./docker/data/mysql:/var/lib/mysql:delegated
+            - ./docker/mysql/logs:/var/log/mysql:delegated
+            - ./docker/mysql/configs/qsys-mysql.cnf:/etc/mysql/conf.d/qsys-mysql.cnf:delegated
+        environment:
+            MYSQL_ROOT_PASSWORD: root
