@@ -193,6 +193,8 @@ $gridColumns = [
     'buttons'=>[
         'duplicate' => function($url,$model) { 
             return  Html::a('&nbsp;<span class="fas fa-file"></span> ', ['duplicate', 'id'=>$model->id], [
+                'class'=>'duplicate-product',
+                'data-id'=>$model->id,
                 'title' => Yii::t('app', 'Duplicate Product'),
                 'data-confirm' => 'Are you sure you want to create duplicate for this?',
             ]);
@@ -287,6 +289,30 @@ Pjax::end();
 $url = Yii::$app->urlManager->createUrl(['item', 'id'=>Yii::$app->request->getBodyParam('id')]);
 
 $js = <<<JS
+$(".duplicate-product").on('click', function(e){
+e.preventDefault();
+
+
+            $.ajax({
+                type: 'POST',
+                url: this.href,
+                data: { 'ProductSearch[id]' : $(this).data('id') },
+                traditional: true,
+                success: function(data) {
+                    if(data.error) {
+                        alert(data.message);
+                        return;
+                    }
+                    
+                    alert("Your product is duplicated successfully!");
+                    location.reload();
+                }
+            });
+
+            return false;
+        
+});
+
 $("#delete-products").on('click', function(e){
 e.preventDefault();
 

@@ -19,6 +19,8 @@ use yii\filters\AccessControl;
 use yii\helpers\FileHelper;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
+use yii\helpers\Json;
+
 /**
  * ProductController implements the CRUD actions for Product model.
  */
@@ -74,10 +76,115 @@ class ProductController extends Controller
                         'actions' => ['import'],
                         'roles' => ['create-product'],
                     ],
+                    [
+                        'allow' => true,
+                        'actions' => ['duplicate'],
+                        'roles' => ['create-product'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['delete-all'],
+                        'roles' => ['create-product'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['reorder-up'],
+                        'roles' => ['create-product'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['reorder-down'],
+                        'roles' => ['create-product'],
+                    ],
                 ]
             ]
         ];
     }
+    
+    public function actionDuplicate($id) {
+        
+        $model = Product::findOne($id);
+        $newModel = new Product;
+        
+        $newModel->attributes = $model->attributes;
+        if($newModel->save()) {
+            $modelComponents = ProductComponent::findAll(['products_id' => $id]);
+
+            foreach ($modelComponents as $modelComponent) {
+                $newModelComponent = new ProductComponent;
+                $newModelComponent->attributes = $modelComponent->attributes;
+                $newModelComponent->products_id = $newModel->id;
+                if(!$newModelComponent->save()) {
+                    print_r($modelComponent->getError());die;
+                }
+                
+            }
+
+        }
+        
+        return Json::encode(['error'=>false, 'msg'=>'']);
+        
+    }
+    
+    public function actionDeleteAll() {
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->post());
+        $models = $dataProvider->getModels();
+        
+        foreach($models as $model) {
+            $model->delete();
+            
+        }
+        
+        return Json::encode(['error'=>false, 'msg'=>'']);
+    }
+    
+    public function actionReorderUp($id)
+    {
+        $model = Product::findOne($id);
+
+        if ($model) {
+            $previousModel = Product::find()
+                ->where(['<', 'sequence', $model->sequence])
+                ->orderBy(['sequence' => SORT_DESC])
+                ->one();
+
+            if ($previousModel) {
+                // Swap the sequence values
+                list($model->sequence, $previousModel->sequence) = [$previousModel->sequence, $model->sequence];
+
+                // Save the changes
+                $model->save();
+                $previousModel->save();
+            }
+        }
+
+        return Json::encode(['error'=>false, 'msg'=>'']);
+    }
+    
+    public function actionReorderDown($id)
+    {
+        $model = Product::findOne($id);
+
+        if ($model) {
+            $nextModel = Product::find()
+                ->where(['>', 'sequence', $model->sequence])
+                ->orderBy(['sequence' => SORT_ASC])
+                ->one();
+
+            if ($nextModel) {
+                // Swap the sequence values
+                list($model->sequence, $nextModel->sequence) = [$nextModel->sequence, $model->sequence];
+
+                // Save the changes
+                $model->save();
+                $nextModel->save();
+            }
+        }
+
+        return Json::encode(['error'=>false, 'msg'=>'']);
+    }
+
 
     /**
      * Lists all Product models.
@@ -88,6 +195,7 @@ class ProductController extends Controller
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->setPagination(['pageSize' => 10]);
+        $dataProvider->query->orderBy(['sequence'=>SORT_ASC]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -132,8 +240,13 @@ class ProductController extends Controller
 
             $model->scenario = TmpProducts::SCENARIO_UPDATE;
             if($model->save()) {
+                
+                
                 $productModel->attributes = $model->attributes;
                 if($productModel->save()) {
+                    $productModel->sequence = $model->id;
+                    $productModel->update();
+                    
                     if($session['TmpProducts']) {
                         $modelTmpProducts = TmpProducts::findOne($session['TmpProducts']['id']);
                         $searchProductComponentModel = new TmpProductComponentSearch();
@@ -158,6 +271,7 @@ class ProductController extends Controller
         } else {
             //if(!$session['TmpProducts']) {
                 if($model->save()) {
+                    
                     $session['TmpProducts'] = [ 'id' => $model->id ];
                 }
             //}
