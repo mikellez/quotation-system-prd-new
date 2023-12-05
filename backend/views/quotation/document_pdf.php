@@ -1,5 +1,6 @@
-<span style="text-decoration: underline; font-weight: bold; font-size: 14pt;">RE: <?= $model->doc_title?></span>
-<br/>
+<!--<span style="text-decoration: underline; font-weight: bold; font-size: 14pt;">RE: <?= $model->doc_title?></span>
+<br/>-->
+
 		<!--<span align="left" style="background-color: rgb(129, 209, 193); border: 1px; padding: 0.5%; text-align-last: center; color:white; font-size: 14pt;"><?//= $model->doc_name?></span>-->
 	<?php if($model->doc_type2 === 'combine'){?>
 		<table class="items" width="100%" style="font-family: helvetica; font-size: 10pt; border-collapse: collapse; margin-bottom: 10cm;" cellpadding="8">
@@ -72,6 +73,9 @@
 	<?php } else { ?>
 	<table class="items" width="100%" style="font-family: helvetica; font-size: 10pt; border-collapse: collapse; margin-bottom: 10cm;" cellpadding="8">
 		<thead>
+		        <tr>
+					<td colspan="8" style="background-color: #fff; text-align:left; border: 0, text-decoration: underline; font-weight: bold; font-size: 14pt;"><span style='text-decoration: underline; font-family: sans-serif; font-size: 16pt;'>RE: <?= $model->doc_title?></span></td>
+				</tr>
 				<tr>
 					<td colspan="5" style="background-color: rgb(129, 209, 193); border: 1px; padding: 0.5%; text-align-last: center; color:white; font-size: 14pt;"><?= $model->doc_name?></td>
 				</tr>
