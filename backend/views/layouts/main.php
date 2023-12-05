@@ -142,12 +142,23 @@ CustomAppAsset::register($this);
 
         if(Yii::$app->user->can('create-brand')) {
           $menuItems[] = [
-            'label' => Html::tag('i','', [ 'class'=>'nav-icon fas fa-list']).Html::tag('p','Brand'),
+            'label' => Html::tag('i','', [ 'class'=>'nav-icon fas fa-tags']).Html::tag('p','Brand'),
             'options'=>[
                 'class'=>'nav-item',
             ],
             'url'=>['brand/index'],
             'active'=>Yii::$app->controller->id == 'brand',
+          ];
+        }
+        
+        if(Yii::$app->user->can('create-brand')) {
+          $menuItems[] = [
+            'label' => Html::tag('i','', [ 'class'=>'nav-icon fas fa-sitemap']).Html::tag('p','Category'),
+            'options'=>[
+                'class'=>'nav-item',
+            ],
+            'url'=>['category/index'],
+            'active'=>Yii::$app->controller->id == 'category',
           ];
         }
 
@@ -172,7 +183,7 @@ CustomAppAsset::register($this);
         ];
 
         $menuItems[] = [
-          'label' => Html::tag('i','', [ 'class'=>'nav-icon fas fa-users']).Html::tag('p','Company Group'),
+          'label' => Html::tag('i','', [ 'class'=>'nav-icon fas fa-building']).Html::tag('p','Company Group'),
           'options'=>[
               'class'=>'nav-item',
           ],
@@ -320,6 +331,7 @@ CustomAppAsset::register($this);
           <div class="row mb-2">
             <div class="col-sm-6">
               <!--<h1 class="m-0">Dashboard</h1>-->
+              <?php echo Html::a('<i class="fa fa-arrow-left"></i> Back', Yii::$app->request->referrer ?: Yii::$app->homeUrl, ['class' => 'btn btn-default']);?>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <?= 

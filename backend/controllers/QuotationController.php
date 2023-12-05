@@ -92,6 +92,21 @@ class QuotationController extends Controller
             ],
         ];
     }
+    
+    public function actionDeleteAll() {
+        $searchModel = new QuotationSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->post());
+        $models = $dataProvider->getModels();
+        
+        foreach($models as $model) {
+            $model->active = 0;
+            if(!$model->save(false)) {
+                print_r($model->getErrors());die;
+            }
+        }
+        
+        return Json::encode(['error'=>false, 'msg'=>'']);
+    }
 
     /**
      * Lists all Quotation models.
@@ -217,7 +232,10 @@ class QuotationController extends Controller
             $model->status = $model::STATUS_DRAFT;
             $model->doc_type = 'quotation';
             $model->doc_type2 = $request->get('type') ? $request->get('type') : null;
-            $model->save();
+            if($model->save()) {
+                $model->sequence = $model->id;
+                $model->update();
+            }
 
             $params['id'] = $model->id;
 

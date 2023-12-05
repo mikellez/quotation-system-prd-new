@@ -152,7 +152,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'class'=>'text-center',
                     ]
                 ],
-                'email:email',
+                'doc_title',
+                /*'email:email',
                 [
                     'attribute'=> 'telephone',
                     'headerOptions'=>[
@@ -176,9 +177,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         'style'=>'white-space: nowrap'
                     ]
                 ],
+                */
                 [
                     'attribute'=> 'total_price_after_disc',
-                    'label'=> 'Discounted Price',
+                    'label'=> 'Total Sales',
                     'format'=> ['decimal',2],
                     'headerOptions'=>[
                         'class'=>'text-right',
@@ -415,8 +417,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ];
 
             $columns = $columnsWithCheckbox;
+            
+            $deleteQuotation = "<button type=\"button\" class=\"btn btn-danger btn-sm\" style=\"float: right\" onclick='clickDeleteQuotation()'>Bulk Delete</button>";
 
-            unset($columns[1]);
+            //unset($columns[1]);
             $quotationExportAll = ExportMenu::widget([
                 'dataProvider' => $dataProviderAll,
                 'columns' => $columns,
@@ -427,7 +431,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ]);
 
 
-            $quotationAll = $quotationExportAll . wrapPjax(GridView::widget([
+            $quotationAll = $quotationExportAll . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-all',
                 'dataProvider' => $dataProviderAll,
                 'filterModel' => $searchModel,
@@ -436,6 +440,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ]));
 
             $combineQuotation = "<button type=\"button\" class=\"btn btn-warning btn-sm\" style=\"float: right\" onclick='clickCombineQuotation()'>Combine Quotation</button>";
+            
+            
             $quotationExportApprove = ExportMenu::widget([
                 'dataProvider' => $dataProviderApprove,
                 'columns' => $columns,
@@ -445,7 +451,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]);
 
-            $quotationApprove = $quotationExportApprove . $combineQuotation . wrapPjax(GridView::widget([
+            $quotationApprove = $quotationExportApprove . $combineQuotation . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-approve',
                 'dataProvider' => $dataProviderApprove,
                 'filterModel' => $searchModel,
@@ -462,7 +468,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]);
 
-            $quotationDraft = $quotationExportDraft . wrapPjax(GridView::widget([
+            $quotationDraft = $quotationExportDraft . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-draft',
                 'dataProvider' => $dataProviderDraft,
                 'filterModel' => $searchModel,
@@ -479,7 +485,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]);
 
-            $quotationPending = $quotationExportPending . wrapPjax(GridView::widget([
+        $quotationPending = $quotationExportPending . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-pending',
                 'dataProvider' => $dataProviderPending,
                 'filterModel' => $searchModel,
@@ -496,7 +502,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]);
 
-            $quotationConfirm = $quotationExportConfirm . wrapPjax(GridView::widget([
+            $quotationConfirm = $quotationExportConfirm . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-confirm',
                 'dataProvider' => $dataProviderConfirm,
                 'filterModel' => $searchModel,
@@ -513,7 +519,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]);
 
-            $quotationDone = $quotationExportDone . wrapPjax(GridView::widget([
+            $quotationDone = $quotationExportDone . $deleteQuotation . wrapPjax(GridView::widget([
                 'id'=> 'kv-grid-view-done',
                 'dataProvider' => $dataProviderDone,
                 'filterModel' => $searchModel,
@@ -601,6 +607,61 @@ function clickCombineQuotation() {
     }
     alert("No rows selected to combine.");
 
+}
+
+function clickDeleteQuotation() {
+     var keys1 = $("#kv-grid-view-all").yiiGridView("getSelectedRows");
+     var keys2 = $("#kv-grid-view-approve").yiiGridView("getSelectedRows");
+     var keys3 = $("#kv-grid-view-pending").yiiGridView("getSelectedRows");
+     var keys4 = $("#kv-grid-view-draft").yiiGridView("getSelectedRows");
+     var keys5 = $("#kv-grid-view-confirm").yiiGridView("getSelectedRows");
+     var keys6 = $("#kv-grid-view-done").yiiGridView("getSelectedRows");
+     
+     if(keys1 == "" && keys2 == "" && keys3 == "" && keys4 == "" && keys5 == "" && keys6 == "") {
+        alert("Please select more than one quotation!");
+        return false;
+     }
+     
+     var keys = "";
+     
+     if(keys1.length>0) {
+         keys = keys1;
+     } else if (keys2.length>0) {
+         keys = keys2;
+     } else if (keys3.length>0) {
+         keys = keys3;
+     } else if (keys4.length>0) {
+         keys = keys4;
+     } else  if (keys5.length>0) {
+         keys = keys5;
+     } else if (keys6.length>0) {
+         keys = keys6;
+     }
+     
+     
+    if(keys) {
+        $.ajax({
+            type: 'POST',
+            url: 'delete-all',
+            data: { 'QuotationSearch[id]' : keys.join() },
+            traditional: true,
+            success: function(data) {
+                if(data.error) {
+                    alert(data.message);
+                    return;
+                }
+                //$("#product-grid-container").html(data);
+                //$.pjax.reload({container: '#pjax-quotation-grid', 'timeout': 5000});
+                alert("Your quotation is deleted successfully!");
+                location.reload();
+            }
+        });
+    }
+    
+         
+        
+    
+    
 }
 JS;
 

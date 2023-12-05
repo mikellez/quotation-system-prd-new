@@ -44,6 +44,7 @@ class TmpProducts extends \yii\db\ActiveRecord
     public $discount = 0.00;
     public $discount2 = 0.00;
     public $discountrm = 0.00;
+    public $standard_costing_percentage = 0.00;
 
     const SCENARIO_IMPORT = 'import';
     const SCENARIO_EXPORT = 'export';
@@ -178,6 +179,8 @@ class TmpProducts extends \yii\db\ActiveRecord
             //$this->image =  Yii::getAlias('/products/'.Yii::$app->security->generateRandomString(32).'/'.$this->imageFile->name);
             $this->image =  Yii::getAlias('/products/'.$this->imageFile->name);
         }
+
+ 	$this->standard_costing = $this->standard_costing_percentage > 0 ? $this->standard_costing_percentage * $this->retail_base_price * 0.01 : $this->standard_costing;
 
         $transaction = Yii::$app->db->beginTransaction();
         $ok = parent::save($runValidation, $attributeNames);

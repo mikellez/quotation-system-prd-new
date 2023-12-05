@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\ClientSearch */
@@ -9,6 +10,15 @@ use yii\grid\GridView;
 
 $this->title = 'Clients';
 $this->params['breadcrumbs'][] = $this->title;
+
+$gridColumnsExport = [
+    ['attribute'=>'id', 'label'=>'id'],
+    ['attribute'=>'company', 'label'=>'company'],
+    ['attribute'=>'address', 'label'=>'address'],
+    ['attribute'=>'person', 'label'=>'person'],
+    ['attribute'=>'email', 'label'=>'email']
+];
+
 ?>
 <div class="client-index">
 
@@ -18,6 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="card-tools">
             <?= Html::a('Create Client', ['create'], ['class' => 'btn btn-success btn-sm']) ?>            
+            <?php 
+            echo ExportMenu::widget([
+                'dataProvider' => $dataProvider,
+                'columns' => $gridColumnsExport,
+                'dropdownOptions' => [
+                    'label' => 'Export All',
+                    'class' => 'btn btn-outline-secondary btn-default'
+                ]
+            ])?>
         </div>
         </div>
         <!-- /.card-header -->

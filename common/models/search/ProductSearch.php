@@ -93,6 +93,8 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'product_type', $this->product_type])
             ->andFilterWhere(['like', 'description', $this->description]);
 
+	$query->orderBy([ 'brand_name'=> SORT_ASC, 'sequence'=> SORT_ASC ]);
+
         return $dataProvider;
     }
 }

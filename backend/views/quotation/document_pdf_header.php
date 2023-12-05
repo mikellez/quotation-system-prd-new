@@ -9,7 +9,7 @@
 				<tbody>
 					<tr>
 						<td width="15%">To</td>
-						<td>: <?= $model->client0->company?></td>
+						<td style='font-weight: bold;'>: <?= $model->client0->company?></td>
 					</tr>
 					<tr>
 						<td>Add</td>
@@ -21,7 +21,7 @@
 					</tr>
 					<tr>
 						<td>e</td>
-						<td>:</td>
+						<td>: <?= $model->email ?></td>
 					</tr>
 					<tr>
 						<td>Contact No</td>
